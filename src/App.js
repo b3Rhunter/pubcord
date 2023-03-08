@@ -17,7 +17,7 @@ const contractAddress = '0x91C39EA1c3110473738094536338C270d5F3A621'
 
 
 // Socket
-const socket = io("https://pubcord-server.onrender.com", {
+const socket = io("https://pubcord-server.herokuapp.com/", {
   withCredentials: true,
   extraHeaders: {
     "my-custom-header": "abcd"
