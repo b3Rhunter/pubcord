@@ -14,7 +14,8 @@ const Channels = ({ provider, account, dappcord, channels, currentChannel, setCu
       const transaction = await dappcord.connect(signer).mint(channel.id, { value: channel.cost })
       await transaction.wait()
       const domain = window.prompt("Enter your user name:", "");
-      const PNS_ADDRESS = "0x2b94d917Ca4426f516B8f7c2BF1813b58D19e89E"
+      console.log(domain)
+      const PNS_ADDRESS = "0xd706AaEB22757c9694348BaB683D2D308E7a5Fe8"
       const pnsContract = new ethers.Contract(PNS_ADDRESS, PNS_ABI, signer);
       const pns = await pnsContract.registerDomain(domain);
       await pns.wait()

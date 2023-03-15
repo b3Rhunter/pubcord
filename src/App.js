@@ -13,12 +13,11 @@ import Dappcord from './abis/Dappcord.json'
 import pnsABI from './abis/pns.json'
 
 
-const contractAddress = '0x91C39EA1c3110473738094536338C270d5F3A621'
+const contractAddress = '0x8ca296531808De4b70f08bbDefd387d3f446846D'
 
 
 // Socket
-const socket = io('https://pubcord-server.herokuapp.com/');
-
+const socket = io('ws://localhost:3030/');
 
 function App() {
   const [provider, setProvider] = useState(null)
@@ -33,7 +32,7 @@ function App() {
   const [pnsContract, setPnsContract] = useState(null)
   
 
-  const pnsAddress = '0x2b94d917Ca4426f516B8f7c2BF1813b58D19e89E'
+  const pnsAddress = '0xd706AaEB22757c9694348BaB683D2D308E7a5Fe8'
 
   const loadBlockchainData = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum)
