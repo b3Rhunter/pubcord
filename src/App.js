@@ -17,7 +17,7 @@ const contractAddress = '0x8ca296531808De4b70f08bbDefd387d3f446846D'
 
 
 // Socket
-const socket = io('ws://localhost:3030/');
+const socket = io('https://pubcord-server.herokuapp.com/');
 
 function App() {
   const [provider, setProvider] = useState(null)
