@@ -17,7 +17,7 @@ const contractAddress = '0x8ca296531808De4b70f08bbDefd387d3f446846D'
 
 
 // Socket
-const socket = io('https://pubcord-server.herokuapp.com/');
+const socket = io('ws://localhost:3030/');
 
 function App() {
   const [provider, setProvider] = useState(null)
@@ -32,7 +32,7 @@ function App() {
   const [pnsContract, setPnsContract] = useState(null)
   
 
-  const pnsAddress = '0xd706AaEB22757c9694348BaB683D2D308E7a5Fe8'
+  const pnsAddress = '0xF2e0691A60712Ea90CE55F880d25d66827B994B2'
 
   const loadBlockchainData = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum)

@@ -26,6 +26,16 @@ body {
 }
 
 /* ------------------------------------------------------ */
+
+.user-image-container {
+  width: 50px; /* Set the desired width */
+  height: 50px; /* Set the desired height */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 200%; /* Scale the image to cover the container */
+  border-radius: 100%;
+}
+
 /* -- NAVIGATION -- */
 
 nav {

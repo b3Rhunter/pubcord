@@ -6,7 +6,7 @@ import Message from './Message';
 import send from '../assets/send.svg'
 
 // Socket
-const socket = io('https://pubcord-server.herokuapp.com/')
+const socket = io('ws://localhost:3030/')
 
 const Messages = ({ account, messages, currentChannel}) => {
   const [message, setMessage] = useState("")
