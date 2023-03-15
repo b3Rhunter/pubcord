@@ -10,14 +10,12 @@ import send from '../assets/send.svg'
 // Socket
 const socket = io('https://pubcord-server.herokuapp.com/')
 
-const Messages = ({ account, messages, currentChannel}) => {
-  const [message, setMessage] = useState("")
-  const [pnsName, setPnsName] = useState("")
-
-  const messageEndRef = useRef(null)
+const Messages = ({ account, messages, currentChannel }) => {
+  const [message, setMessage] = useState("");
+  const messageEndRef = useRef(null);
 
   const sendMessage = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const messageObj = {
       channel: currentChannel.id.toString(),
@@ -40,20 +38,7 @@ const Messages = ({ account, messages, currentChannel}) => {
 
   useEffect(() => {
     scrollHandler()
-    getPns()
-  })
-
-
-  const getPns = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = await provider.getSigner();
-    const PNS_ADDRESS = "0x2b94d917Ca4426f516B8f7c2BF1813b58D19e89E"
-    const pnsContract = new ethers.Contract(PNS_ADDRESS, PNS_ABI, signer);
-    const pns = await pnsContract.getPrimaryDomain(account);
-    console.log(pns)
-    setPnsName(pns)
-  }
-
+  }, [messages])
 
   return (
     <div className="text">
@@ -63,7 +48,7 @@ const Messages = ({ account, messages, currentChannel}) => {
           <div className="message" key={index}>
             <img src={person} alt="Person" />
             <div className="message_content">
-              <h3>{pnsName || message.account.slice(0, 6) + '...' + message.account.slice(38, 42)}</h3>
+              <h3>{message.account.slice(0, 6) + '...' + message.account.slice(38, 42)}</h3>
               <p>
                 {message.text}
               </p>
